@@ -11,7 +11,7 @@ const User = require('./models/user');
 const sendMail = require('./mail');
 const Messa = require('./models/messa');
 
-mongoose.connect('mongodb://127.0.0.1:27017/Happy')
+mongoose.connect('mongodb+srv://pallaveechaubey11:XDtlURsAkAcaAQnf@cluster0.l6iuvmn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(()=>{
     console.log('DB connected');
 })

@@ -11,7 +11,8 @@ async function sendMail(formData) {
 
   const mailOptions = {
     from: "pallaveechaubey11@gmail.com",
-    to: formData.sendemail,
+    // to: "pallavee.x.chaubey@fosteringlinux.com",
+    to:formData.recipient,
     subject: "Help Me testing",
     text: `Hloo ${formData.name} this side my email is  ${formData.email}, Please help  me regarding this ${formData.message}`,
   };

@@ -4,7 +4,8 @@ const messSchema = new mongoose.Schema({
   name: String,
   email: String,
   message: String,
-  sendemail:String
+  recipient:String
+
 });
 
 const Messa = mongoose.model("Messa", messSchema);

@@ -11,7 +11,7 @@ const User = require('./models/user');
 const sendMail = require('./mail');
 const Messa = require('./models/messa');
 
-mongoose.connect('mongodb+srv://pallaveechaubey11:XDtlURsAkAcaAQnf@cluster0.l6iuvmn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb://127.0.0.1:27017/Happy')
 .then(()=>{
     console.log('DB connected');
 })
@@ -66,15 +66,14 @@ app.post("/login", async (req, res) => {
 app.post("/sendm",async(req,res)=>{
 
         try {
-          const { name, email, message, sendemail} = req.body;
+          const { name, email, message,recipient } = req.body;
           const mess = await Messa.create({
             name,
             email,
             message,
-            sendemail
+            recipient
           });
-          //  sendMail({ name, email, message,sendemail });
-          console.log(mess)
+           sendMail({ name, email, message ,recipient});
           res.send({ message: "mail Send" });
         } 
         catch (e) {
